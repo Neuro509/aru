@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Beautiful Girl Alexia 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(-45deg, #ffe4f0, #ffccd5, #ffd1dc, #ffc0cb);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      text-align: center;
+      padding: 20px;
+      color: #ff5e99;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .fade {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .gif-top {
+      max-width: 120px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .question {
+      font-size: 2em;
+      margin: 20px;
+    }
+
+    button {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 1.2em;
+      background-color: #ffb3d1;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .card {
+      width: 300px;
+      height: 400px;
+      margin: 20px auto;
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-front {
+      background-color: #ffd1dc;
+      font-size: 1.5em;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      background: #fff;
+    }
+
+    .card-back img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    .no-fun {
+      position: relative;
+      height: 150px;
+    }
+
+    .no-fun button {
+      position: absolute;
+    }
+
+    #yesBtn {
+      z-index: 2;
+    }
+
+    .shake {
+      animation: shake 0.3s;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(0px, 0px); }
+      25% { transform: translate(5px, 0px); }
+      50% { transform: translate(-5px, 0px); }
+      75% { transform: translate(5px, 0px); }
+      100% { transform: translate(0px, 0px); }
+    }
+
+    .css-flower {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      z-index: 10;
+    }
+
+    .top-left { top: 10px; left: 10px; }
+    .top-right { top: 10px; right: 10px; }
+    .bottom-left { bottom: 10px; left: 10px; }
+    .bottom-right { bottom: 10px; right: 10px; }
+
+    .petal {
+      width: 10px;
+      height: 20px;
+      background: #ff99c8;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      transform-origin: center bottom;
+    }
+
+    .petal:nth-child(1) { transform: rotate(0deg) translateY(-10px); }
+    .petal:nth-child(2) { transform: rotate(72deg) translateY(-10px); }
+    .petal:nth-child(3) { transform: rotate(144deg) translateY(-10px); }
+    .petal:nth-child(4) { transform: rotate(216deg) translateY(-10px); }
+    .petal:nth-child(5) { transform: rotate(288deg) translateY(-10px); }
+
+    .center {
+      width: 12px;
+      height: 12px;
+      background: yellow;
+      border-radius: 50%;
+      position: absolute;
+      top: 9px;
+      left: 9px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="fade"></div>
+
+  <div class="css-flower top-left">
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div>
+  </div>
+  <div class="css-flower top-right">
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div>
+  </div>
+  <div class="css-flower bottom-left">
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div>
+  </div>
+  <div class="css-flower bottom-right">
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div>
+  </div>
+
+  <script>
+    const app = document.getElementById('app');
+    let jokeIndex = 0;
+    const jokes = [
+      "Why don't scientists trust atoms? Because they make up everything! 😄",
+      "Why did the teddy bear say no to dessert? Because it was stuffed! 🐻",
+      "Why did the banana go out with the prune? Because it couldn't find a date! 🍌",
+      "What do you call cheese that isn't yours? Nacho cheese! 🧀",
+      "What’s orange and sounds like a parrot? A carrot! 🥕",
+      "Why can’t your nose be 12 inches long? Because then it would be a foot! 👃",
+      "What do you call a bear with no teeth? A gummy bear! 🧸",
+      "How does a penguin build its house? Igloos it together! 🐧"
+    ];
+
+    function switchPage(html) {
+      app.classList.remove('fade');
+      setTimeout(() => {
+        app.innerHTML = html;
+        app.classList.add('fade');
+      }, 100);
+    }
+
+    function showQuestion1() {
+      switchPage(`
+        <img src="https://media.giphy.com/media/SHdwS47nztG2MHCOTH/giphy.gif" alt="Cute Molang" class="gif-top" />
+        <div class="question">Are you alright my love? 🥺</div>
+        <button onclick="goToJokePage()">No 😢</button>
+        <button onclick="showQuestion2()">Yes 😊</button>
+      `);
+    }
+
+    function goToJokePage() {
+      let interval;
+      function updateJoke() {
+        const jokeText = document.getElementById('jokeText');
+        if (jokeText) jokeText.innerText = jokes[jokeIndex];
+        jokeIndex = (jokeIndex + 1) % jokes.length;
+      }
+      switchPage(`
+        <img src="https://media.giphy.com/media/eKfpB6WZeKC1DiGrj8/giphy.gif" alt="Laughing" class="gif-top" />
+        <div class="question">Awww nooo! Here's something to cheer you up 💕</div>
+        <div id="jokeText">${jokes[0]}</div>
+        <br>
+        <button onclick="clearInterval(window.jokeInterval); showQuestion2()">I'm smiling now 😊</button>
+      `);
+      jokeIndex = 1;
+      window.jokeInterval = setInterval(updateJoke, 5000);
+    }
+
+    function showQuestion2() {
+      switchPage(`
+        <img src="https://media.giphy.com/media/wPnbkEcr2tXiTN0Lmq/giphy.gif" alt="Love bear" class="gif-top" />
+        <div class="question">Here is the most beautiful girl on Earth? 😍</div>
+        <div class="card" onclick="flipCard()">
+          <div class="card-inner" id="card-inner">
+            <div class="card-front">Click Me 💝</div>
+            <div class="card-back">
+              <img src="mygirl.jpg" alt="Beautiful Girl">
+            </div>
+          </div>
+        </div>
+      `);
+    }
+
+    function flipCard() {
+      document.getElementById('card-inner').style.transform = 'rotateY(180deg)';
+      setTimeout(showQuestion3, 10000);
+    }
+
+    function showQuestion3() {
+      switchPage(`
+        <img src="https://media.giphy.com/media/l0Exk8EUzSLsrErEQ/giphy.gif" alt="Love hearts" class="gif-top" />
+        <div class="question">Do you love me more? 💘</div>
+        <div class="no-fun">
+          <button id="yesBtn" onmouseover="moveButton()" onclick="buttonShake()">Yes 😏</button>
+          <button onclick="finishLove()">No 😅</button>
+        </div>
+      `);
+    }
+
+    function moveButton() {
+      const btn = document.getElementById('yesBtn');
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 100 - 50;
+      btn.style.transition = 'transform 0.3s ease';
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    function buttonShake() {
+      const btn = document.getElementById('yesBtn');
+      btn.classList.add('shake');
+      setTimeout(() => btn.classList.remove('shake'), 300);
+    }
+
+    function finishLove() {
+      switchPage(`
+        <img src="https://media.giphy.com/media/f9EmXxglhdhAj1bo28/giphy.gif" alt="Cat Hug" class="gif-top" />
+        <div class="question">hehehe i knew i loved you more 💗💗💗</div>
+      `);
+    }
+
+    showQuestion1();
+  </script>
+</body>
+</html>
